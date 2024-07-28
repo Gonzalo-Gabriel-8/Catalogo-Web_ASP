@@ -1,0 +1,31 @@
+﻿/*//no tocar*/
+.card-img-container {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .card-img-container img {
+        max-height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+
+
+
+/*tamaño de imagen*/
+.carousel-item img {
+    width: auto; /* Ajusta el ancho deseado */
+    height: 500px; /* Ajusta la altura deseada */
+    /*object-fit: cover;*/ /* Mantiene el aspecto de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+/*tamaño de contenedor*/
+.carousel-inner {
+    height: 550px; /* Ajusta la altura del contenedor del carrusel */
+    margin-bottom: 10px;
+    padding-top: 50px;
+}
