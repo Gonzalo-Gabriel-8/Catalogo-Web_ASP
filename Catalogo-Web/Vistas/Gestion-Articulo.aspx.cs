@@ -16,11 +16,19 @@ namespace Catalogo_Web.Vistas
             if (!IsPostBack)
             {
                 ArticuloNegocio Articulo_negocio = new ArticuloNegocio();
+                MarcaNegocio Marca_negocio = new MarcaNegocio();
+                CategoriaNegocio Categoria_negocio = new CategoriaNegocio();
+
+
+
                 dgvArticulo.DataSource = Articulo_negocio.ListaArticulo();
                 dgvArticulo.DataBind();
-                MarcaNegocio Marca_negocio = new MarcaNegocio();
+
                 dgv_Marcas.DataSource = Marca_negocio.listaMarca();
                 dgv_Marcas.DataBind();
+
+                dgvCategoria.DataSource= Categoria_negocio.listaCategoria();
+                dgvCategoria.DataBind();
             }
         }
 
@@ -37,14 +45,7 @@ namespace Catalogo_Web.Vistas
             dgvArticulo.DataSource = negocio.ListaArticulo();
             dgvArticulo.DataBind();
         }
-        protected void btn_Agregar_Marcas_Click(object sender, EventArgs e)
-        {
-            MarcaNegocio negocio = new MarcaNegocio();
-            Marca nuevaMarca = new Marca();
-            nuevaMarca.Descripcion = txtAgregarMarca.Text;
-            negocio.AgregarMarca(nuevaMarca);
-            Response.Redirect("../Vistas-Gestion_Marcas/Gestion-Marcas.aspx", false);
-        }
+        
 
         protected void dgv_Marcas_SelectedIndexChanged(object sender, EventArgs e)
         {

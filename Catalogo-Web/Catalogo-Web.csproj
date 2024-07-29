@@ -73,15 +73,14 @@
     <Content Include="Styles\Default.css" />
     <Content Include="Registro.aspx" />
     <Content Include="Suscripcion.aspx" />
-    <Content Include="Vistas-Gestion_Marcas\Formulario_Marcas.aspx" />
     <Content Include="Vistas\Default.aspx" />
     <Content Include="Vistas\Detalle.aspx" />
     <Content Include="Vistas\Error.aspx" />
     <Content Include="Vistas\Favoritos.aspx" />
     <Content Include="Vistas\Formulario.aspx" />
     <Content Include="Vistas\Gestion-Articulo.aspx" />
-    <Content Include="Vistas-Gestion_Categoria\Gestion-Categorias.aspx" />
-    <Content Include="Vistas-Gestion_Marcas\Gestion-Marcas.aspx" />
+    <Content Include="Vistas\Gestion-Categorias.aspx" />
+    <Content Include="Vistas\Gestion-Marcas.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -116,13 +115,6 @@
     </Compile>
     <Compile Include="Suscripcion.aspx.designer.cs">
       <DependentUpon>Suscripcion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas-Gestion_Marcas\Formulario_Marcas.aspx.cs">
-      <DependentUpon>Formulario_Marcas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas-Gestion_Marcas\Formulario_Marcas.aspx.designer.cs">
-      <DependentUpon>Formulario_Marcas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -166,18 +158,18 @@
     <Compile Include="Vistas\Gestion-Articulo.aspx.designer.cs">
       <DependentUpon>Gestion-Articulo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas-Gestion_Categoria\Gestion-Categorias.aspx.cs">
+    <Compile Include="Vistas\Gestion-Categorias.aspx.cs">
       <DependentUpon>Gestion-Categorias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas-Gestion_Categoria\Gestion-Categorias.aspx.designer.cs">
+    <Compile Include="Vistas\Gestion-Categorias.aspx.designer.cs">
       <DependentUpon>Gestion-Categorias.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas-Gestion_Marcas\Gestion-Marcas.aspx.cs">
+    <Compile Include="Vistas\Gestion-Marcas.aspx.cs">
       <DependentUpon>Gestion-Marcas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas-Gestion_Marcas\Gestion-Marcas.aspx.designer.cs">
+    <Compile Include="Vistas\Gestion-Marcas.aspx.designer.cs">
       <DependentUpon>Gestion-Marcas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
