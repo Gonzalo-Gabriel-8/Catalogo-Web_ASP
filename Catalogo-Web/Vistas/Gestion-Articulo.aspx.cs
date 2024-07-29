@@ -18,6 +18,9 @@ namespace Catalogo_Web.Vistas
                 ArticuloNegocio Articulo_negocio = new ArticuloNegocio();
                 dgvArticulo.DataSource = Articulo_negocio.ListaArticulo();
                 dgvArticulo.DataBind();
+                MarcaNegocio Marca_negocio = new MarcaNegocio();
+                dgv_Marcas.DataSource = Marca_negocio.listaMarca();
+                dgv_Marcas.DataBind();
             }
         }
 
@@ -34,25 +37,22 @@ namespace Catalogo_Web.Vistas
             dgvArticulo.DataSource = negocio.ListaArticulo();
             dgvArticulo.DataBind();
         }
-        //-------------------------------- ESTILOS PARA LA PAGINACION -------------------------------
-        protected void dgvArticulo_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void btn_Agregar_Marcas_Click(object sender, EventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                // Agregar clases de Bootstrap a cada fila
-                e.Row.CssClass = "table-row";
-            }
-            else if (e.Row.RowType == DataControlRowType.Header)
-            {
-                // Agregar clases de Bootstrap al encabezado
-                e.Row.CssClass = "table-header";
-            }
-            else if (e.Row.RowType == DataControlRowType.Pager)
-            {
-                // Estilizar el paginador
-                e.Row.CssClass = "table-pager";
-            }
+            MarcaNegocio negocio = new MarcaNegocio();
+            Marca nuevaMarca = new Marca();
+            nuevaMarca.Descripcion = txtAgregarMarca.Text;
+            negocio.AgregarMarca(nuevaMarca);
+            Response.Redirect("../Vistas-Gestion_Marcas/Gestion-Marcas.aspx", false);
+        }
+
+        protected void dgv_Marcas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Id = dgv_Marcas.SelectedDataKey.Value.ToString();
+            Response.Redirect("../Vistas-Gestion_Marcas/Formulario_Marcas.aspx?Id=" + Id);
         }
 
     }
 }
+
+    

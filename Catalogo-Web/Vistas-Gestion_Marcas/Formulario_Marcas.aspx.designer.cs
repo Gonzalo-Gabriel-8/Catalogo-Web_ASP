@@ -7,38 +7,47 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Catalogo_Web.Vistas
+namespace Catalogo_Web.Vistas_Gestion_Marcas
 {
 
 
-    public partial class Gestion_Marcas
+    public partial class Formulario_Marcas
     {
 
         /// <summary>
-        /// Control dgv_Marcas.
+        /// Control txtId.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgv_Marcas;
+        protected global::System.Web.UI.WebControls.TextBox txtId;
 
         /// <summary>
-        /// Control txtNuevaMarca.
+        /// Control txtMarcaVeja.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNuevaMarca;
+        protected global::System.Web.UI.WebControls.TextBox txtMarcaVeja;
 
         /// <summary>
-        /// Control btn_Agregar_Marcas.
+        /// Control txtMarcaNueva.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Agregar_Marcas;
+        protected global::System.Web.UI.WebControls.TextBox txtMarcaNueva;
+
+        /// <summary>
+        /// Control Aceptar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Aceptar;
     }
 }
