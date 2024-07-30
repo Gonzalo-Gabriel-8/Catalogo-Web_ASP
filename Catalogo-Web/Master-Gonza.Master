@@ -64,7 +64,7 @@
                                 <a class="nav-link" href="../Vistas/Mi-Perfil.aspx">Mi Perfil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../Vistas/Gestion-Articulo.aspx">Gestión de Articulos</a>
+                                <a class="nav-link" href="../Vistas/Gestiones-Productos.aspx">Gestión de Productos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../Vistas/Favoritos.aspx">Favoritos</a>

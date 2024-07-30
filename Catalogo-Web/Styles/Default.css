@@ -17,8 +17,8 @@
 
 /*tamaño de imagen*/
 .carousel-item img {
-    width: auto; /* Ajusta el ancho deseado */
-    height: 500px; /* Ajusta la altura deseada */
+    width: auto; /* Ajusta el ancho */
+    height: 500px; /* Ajusta la altura */
     /*object-fit: cover;*/ /* Mantiene el aspecto de la imagen */
     margin: 0 auto; /* Centra la imagen horizontalmente */
 }

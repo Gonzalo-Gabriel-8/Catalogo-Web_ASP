@@ -35,7 +35,7 @@ namespace Catalogo_Web.Vistas
         protected void dgvArticulo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string Id = dgvArticulo.SelectedDataKey.Value.ToString();
-            Response.Redirect("../Vistas/Formulario.aspx?Id=" + Id);
+            Response.Redirect("../Vistas/Formulario-Articulo.aspx?Id=" + Id);
         }
 
         protected void dgvArticulo_PageIndexChanging(object sender, GridViewPageEventArgs e)

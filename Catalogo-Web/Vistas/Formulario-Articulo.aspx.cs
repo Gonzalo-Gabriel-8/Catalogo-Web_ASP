@@ -6,14 +6,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Catalogo_Web.Vistas;
+ 
 
 namespace Catalogo_Web.Vistas
 {
     public partial class Formulario : System.Web.UI.Page
     {
-        public bool confirmarEliminar = false;
+        public bool botonEliminar = false;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+           
             txtId.Enabled = false;
             try
             {
@@ -34,6 +38,7 @@ namespace Catalogo_Web.Vistas
                 string Id = Request.QueryString["Id"] != null ? Request.QueryString["Id"].ToString() : "";
                 if (Id != "" && !IsPostBack)
                 {
+                    botonEliminar = true;
                     ArticuloNegocio negocio = new ArticuloNegocio();
                     Articulo articuloSeleccionado = negocio.listar(Id)[0];
                     Session.Add("articuloSeleccionado", articuloSeleccionado);
@@ -83,21 +88,22 @@ namespace Catalogo_Web.Vistas
                 {
                     articulo.Id = int.Parse(txtId.Text);
                     negocio.ModificarArticulo(articulo);
-                    Response.Redirect("../Vistas/Gestion-Articulo.aspx", false);
+                    Response.Redirect("../Vistas/Gestiones-Productos.aspx", false);
 
 
                 }
                 else
-                {                    
+                {
+                               
                     negocio.AgregarArticulo(articulo);
-                    Response.Redirect("../Vistas/Gestion-Articulo.aspx", false);
+                    Response.Redirect("../Vistas/Gestiones-Productos.aspx", false);
                 }
 
             }
             catch (Exception ex)
             {
                 Session.Add("../Vistas/Error.aspx", ex.ToString());
-                Response.Redirect("../Vistas/Gestion-Articulo.aspx", false);
+                Response.Redirect("../Vistas/Gestiones-Productos.aspx", false);
             }
         }
 
@@ -108,12 +114,12 @@ namespace Catalogo_Web.Vistas
                 
                 ArticuloNegocio negocio= new ArticuloNegocio();
                 negocio.EliminarArticulo(int.Parse(txtId.Text));
-                Response.Redirect("../Vistas/Gestion-Articulo.aspx", false);
+                Response.Redirect("../Vistas/Gestiones-Productos.aspx", false);
             }
             catch (Exception ex)
             {
                 Session.Add("../Vistas/Error.aspx", ex.ToString());
-                Response.Redirect("../Vistas/Gestion-Articulo.aspx", false);
+                Response.Redirect("../Vistas/Gestiones-Productos.aspx", false);
             }
         }
     }

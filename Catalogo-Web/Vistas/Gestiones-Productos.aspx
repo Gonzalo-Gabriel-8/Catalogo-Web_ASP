@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master-Gonza.Master" AutoEventWireup="true" CodeBehind="Gestion-Articulo.aspx.cs" Inherits="Catalogo_Web.Vistas.ListaCatalogo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master-Gonza.Master" AutoEventWireup="true" CodeBehind="Gestiones-Productos.aspx.cs" Inherits="Catalogo_Web.Vistas.ListaCatalogo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../Script/Modal.js"></script>
@@ -17,7 +17,7 @@
             </div>
             <div style="text-align: right" class="col-6">
                 <div class="mb-3">
-                    <a href="../Vistas/Formulario.aspx" class="btn btn-outline-primary">+ Agregar Articulo</a>
+                    <a href="../Vistas/Formulario-Articulo.aspx" class="btn btn-outline-primary">+ Agregar Articulo</a>
                 </div>
             </div>
 
@@ -132,9 +132,5 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <%--_____________________________________________________________________________________________________________--%>
-    </div>
     </div>
 </asp:Content>
