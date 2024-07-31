@@ -22,10 +22,10 @@
                 <a class="navbar-brand" href="#">Catalogo de Articulos</a>
                 <!-- Desplegable inicio de session -->
                 <div class="dropdown">
-                    <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                         Iniciar sesión
                     </button>
-                    <div class="dropdown-menu dropdown-menu-end p-4" style="width: 400px;">
+                    <div class="dropdown-menu dropdown-menu-end p-4" style="width: 350px; background-color:aqua; border-color:blue">
                         <div>
                             <div class="mb-3">
                                 <label id="lblEmail" class="form-label">Correo</label>
@@ -35,14 +35,14 @@
                                 <label id="lblPass" class="form-label">Contraseña</label>
                                 <asp:TextBox ID="txtPass" CssClass="form-control" TextMode="Password" placeholder="Password" runat="server"></asp:TextBox>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3" style="text-align:center">
                                 <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" CssClass="btn btn-outline-primary" OnClick="btnIngresar_Click" />
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3" style="text-align:center">
                                 <label id="lblRegistrarse" class="form-label">¿Aún no tienes una cuenta? </label>
                             </div>
-                            <div class="mb-3">
-                                <a href="../Vistas/Registrarse.aspx" class="btn btn-outline-secondary">Registrarse</a>
+                            <div class="mb-3" style="text-align:center">
+                                <a href="../Vistas/Registrarse.aspx" class="btn btn-outline-primary">Registrarse</a>
                             </div>
                         </div>
                     </div>

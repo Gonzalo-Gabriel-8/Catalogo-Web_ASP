@@ -17,8 +17,8 @@
         </div>
     </div>
     <%---------------------------------------------Cards--------------------------------------%>
-    <div class="row row-cols-1 row-cols-md-4 g-2">
-        <asp:Repeater ID="repRepetidor" runat="server">
+    <div class="row row-cols-1 row-cols-md-6 g-4">
+        <asp:Repeater ID="repRepetidor" ViewStateMode="Disabled" runat="server">
             <ItemTemplate>
                 <div class="col">
                     <div class="card h-100 border-dark" style="max-width: 16rem;">

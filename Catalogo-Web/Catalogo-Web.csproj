@@ -84,7 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Mi-Perfil.aspx" />
     <Content Include="Script\Modal.js" />
     <Content Include="Styles\Default.css" />
     <Content Include="Registro.aspx" />
@@ -95,6 +94,7 @@
     <Content Include="Vistas\Favoritos.aspx" />
     <Content Include="Vistas\Formulario-Articulo.aspx" />
     <Content Include="Vistas\Gestiones-Productos.aspx" />
+    <Content Include="Vistas\MI-Perfil.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -107,13 +107,6 @@
     </Compile>
     <Compile Include="Master-Gonza.Master.designer.cs">
       <DependentUpon>Master-Gonza.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Mi-Perfil.aspx.cs">
-      <DependentUpon>Mi-Perfil.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Mi-Perfil.aspx.designer.cs">
-      <DependentUpon>Mi-Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.aspx.cs">
@@ -171,6 +164,13 @@
     </Compile>
     <Compile Include="Vistas\Gestiones-Productos.aspx.designer.cs">
       <DependentUpon>Gestiones-Productos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\MI-Perfil.aspx.cs">
+      <DependentUpon>MI-Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\MI-Perfil.aspx.designer.cs">
+      <DependentUpon>MI-Perfil.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
