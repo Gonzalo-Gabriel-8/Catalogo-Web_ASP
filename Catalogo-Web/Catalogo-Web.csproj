@@ -85,14 +85,19 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Script\Modal.js" />
+    <Content Include="Script\Modo-Oscuro.js" />
     <Content Include="Styles\Default.css" />
     <Content Include="Registro.aspx" />
+    <Content Include="Styles\Modo-Oscuro.css" />
+    <Content Include="Styles\Paginacion_Grilla.css" />
     <Content Include="Suscripcion.aspx" />
+    <Content Include="User Control\Gestiones-Productos\Gestion-Articulo.ascx" />
     <Content Include="Vistas\Default.aspx" />
     <Content Include="Vistas\Detalle.aspx" />
     <Content Include="Vistas\Error.aspx" />
     <Content Include="Vistas\Favoritos.aspx" />
     <Content Include="Vistas\Formulario-Articulo.aspx" />
+    <Content Include="Vistas\Formulario-Marca.aspx" />
     <Content Include="Vistas\Gestiones-Productos.aspx" />
     <Content Include="Vistas\MI-Perfil.aspx" />
     <Content Include="Web.config" />
@@ -122,6 +127,13 @@
     </Compile>
     <Compile Include="Suscripcion.aspx.designer.cs">
       <DependentUpon>Suscripcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\Gestiones-Productos\Gestion-Articulo.ascx.cs">
+      <DependentUpon>Gestion-Articulo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Control\Gestiones-Productos\Gestion-Articulo.ascx.designer.cs">
+      <DependentUpon>Gestion-Articulo.ascx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -157,6 +169,13 @@
     </Compile>
     <Compile Include="Vistas\Formulario-Articulo.aspx.designer.cs">
       <DependentUpon>Formulario-Articulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Formulario-Marca.aspx.cs">
+      <DependentUpon>Formulario-Marca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Formulario-Marca.aspx.designer.cs">
+      <DependentUpon>Formulario-Marca.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Gestiones-Productos.aspx.cs">
       <DependentUpon>Gestiones-Productos.aspx</DependentUpon>

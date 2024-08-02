@@ -2,8 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../Styles/Default.css" rel="stylesheet" />
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
     <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <asp:Repeater ID="RepeaterCarrusel" runat="server">
@@ -15,9 +17,9 @@
 
             </asp:Repeater>
         </div>
-    </div>
+    </div>    
     <%---------------------------------------------Cards--------------------------------------%>
-    <div class="row row-cols-1 row-cols-md-6 g-4">
+    <div class="row row-cols-1 row-cols-md-5 g-4">
         <asp:Repeater ID="repRepetidor" ViewStateMode="Disabled" runat="server">
             <ItemTemplate>
                 <div class="col">
@@ -28,8 +30,14 @@
                         <div class="card-body p-2">
                             <h5 class="card-title h6"><%#Eval("Nombre")%></h5>
                             <p class="card-text small"><%#Eval("Codigo") %></p>
-                            <a href="../Vistas/Detalle.aspx?id=<%#Eval("Id") %>" class="btn btn-outline-primary btn-sm">Ver Detalle</a>
-                            <a href="../Vistas/Favoritos.aspx?id=<%#Eval("Id") %>" class="btn btn-outline-danger btn-sm">Favoritos</a>
+                            <div class="mb-3">
+                                <a href="../Vistas/Detalle.aspx?id=<%#Eval("Id") %>" class="btn btn-outline-primary btn-sm" style="text-align:center" >Ver Detalle</a>
+
+                            </div>
+                            <div class="mb-3">
+                                <a href="../Vistas/Favoritos.aspx?id=<%#Eval("Id") %>" class="btn btn-outline-danger btn-sm" style="text-align: center">Favoritos</a>
+                            </div>
+
                         </div>
                     </div>
                 </div>

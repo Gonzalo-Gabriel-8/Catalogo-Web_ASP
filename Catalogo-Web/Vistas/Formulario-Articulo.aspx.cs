@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Catalogo_Web.Vistas;
- 
+
 
 namespace Catalogo_Web.Vistas
 {
@@ -16,8 +16,6 @@ namespace Catalogo_Web.Vistas
         public bool botonEliminar = false;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-           
             txtId.Enabled = false;
             try
             {
@@ -52,6 +50,10 @@ namespace Catalogo_Web.Vistas
                     ddlCategoria.SelectedValue = articuloSeleccionado.categoria.Id.ToString();
                     ddlMarca.SelectedValue = articuloSeleccionado.marca.Id.ToString();
                     txtUrlImagen_TextChanged(sender, e);
+                    if (articuloSeleccionado.Precio < 0)
+                    {
+                        btnBaja.Text = "Dar de Alta";
+                    }
 
                 }
             }
@@ -62,7 +64,7 @@ namespace Catalogo_Web.Vistas
             }
 
         }
-       
+
         protected void txtUrlImagen_TextChanged(object sender, EventArgs e)
         {
             imgArticulo.ImageUrl = txtUrlImagen.Text;
@@ -94,7 +96,6 @@ namespace Catalogo_Web.Vistas
                 }
                 else
                 {
-                               
                     negocio.AgregarArticulo(articulo);
                     Response.Redirect("../Vistas/Gestiones-Productos.aspx", false);
                 }
@@ -111,8 +112,8 @@ namespace Catalogo_Web.Vistas
         {
             try
             {
-                
-                ArticuloNegocio negocio= new ArticuloNegocio();
+
+                ArticuloNegocio negocio = new ArticuloNegocio();
                 negocio.EliminarArticulo(int.Parse(txtId.Text));
                 Response.Redirect("../Vistas/Gestiones-Productos.aspx", false);
             }
@@ -121,6 +122,26 @@ namespace Catalogo_Web.Vistas
                 Session.Add("../Vistas/Error.aspx", ex.ToString());
                 Response.Redirect("../Vistas/Gestiones-Productos.aspx", false);
             }
+        }
+
+        protected void btnBaja_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ArticuloNegocio negocio = new ArticuloNegocio();
+                Articulo seleccionado = (Articulo)Session["articuloSeleccionado"];
+                negocio.EliminarArticuloLogico(seleccionado.Id, seleccionado.Precio * -1);
+                Response.Redirect("../Vistas/Gestiones-Productos.aspx", false);
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("../Vistas/Error.aspx", ex.ToString());
+                Response.Redirect("../Vistas/Gestiones-Productos.aspx", false);
+            }
+
+
+
         }
     }
 }

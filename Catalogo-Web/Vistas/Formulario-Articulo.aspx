@@ -14,55 +14,48 @@
         display: block; 
     }
 </style>
-
-
     <div class="container-fluid" style="margin-top: 70px">
         <div class="row">
             <div class="col-6">
-                <%-- Entrada de ID --%>
+                <%-- Carga de ID --%>
                 <div class="mb-3">
                     <label for="txtId" class="form-label">Id</label>
                     <asp:TextBox runat="server" ID="txtId" CssClass="form-control" />
-
                 </div>
-                <%-- Entrada de Codigo --%>
+                <%-- Carga de Codigo --%>
                 <div class="mb-3">
                     <label for="txtCodigo" class="form-label">Codigo:</label>
                     <asp:TextBox runat="server" ID="txtCodigo" CssClass="form-control" />
-
-
                 </div>
-                <%-- Entrada de Nombre --%>
+                <%-- Carga de Nombre --%>
                 <div class="mb-3">
                     <label for="txtNombre" class="form-label">Nombre</label>
                     <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" />
                 </div>
-                <%-- Entrada de Precio --%>
+                <%-- Carga de Precio --%>
                 <div class="mb-3">
                     <label for="txtPrecio" class="form-label">Precio</label>
                     <asp:TextBox runat="server" ID="txtPrecio" CssClass="form-control" />
                 </div>
-                <%--Entrada Desplegable de Categoria--%>
+                <%--Carga Desplegable de Categoria--%>
                 <div class="mb-3">
                     <label for="ddCategoria" class="form-label">Categoria</label>
                     <asp:DropDownList runat="server" ID="ddlCategoria" CssClass="form-select"></asp:DropDownList>
                 </div>
-                <%--Entrada Desplegable de Marca--%>
+                <%--Carga Desplegable de Marca--%>
                 <div class="mb-3">
                     <label for="ddlMarca" class="form-label">Marca</label>
                     <asp:DropDownList runat="server" ID="ddlMarca" CssClass="form-select"></asp:DropDownList>
                 </div>
-
-
             </div>
             <%-------------------------------------------------------------------------------------------------------------------------%>
-            <%-- Entrada de Descripcion --%>
+            <%-- Carga de Descripcion --%>
             <div class="col-6">
                 <div class="mb-3">
                     <label for="txtDescripcion" class="form-label">Descripcion</label>
                     <asp:TextBox TextMode="MultiLine" runat="server" ID="txtDescripcion" CssClass="form-control" />
                 </div>
-                <%-- Entrada de Imagen con Actualizacion --%>
+                <%-- Carga de Imagen con Actualizacion --%>
                 <asp:UpdatePanel ID="UpdatePanel" runat="server">
                     <ContentTemplate>
                         <label for="txtUrlImagen" class="form-label">URL Imagen:</label>
@@ -79,10 +72,13 @@
             <div class="col-6">
                 <div class="mb-5">
                     <asp:Button ID="btnAceptar" Text="Aceptar" CssClass="btn btn-outline-primary" OnClick="btnAceptar_Click" runat="server" />
+                    
                     <a href="../Vistas/Gestiones-Productos.aspx" class="btn btn-outline-secondary">Cancelar</a>
+
 
                     <%if (botonEliminar)
                         {%>
+                    <asp:Button Text="Dar de Baja" CssClass="btn btn-outline-warning" ID="btnBaja" OnClick="btnBaja_Click" runat="server" />
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Eliminar</button>
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -90,8 +86,9 @@
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="staticBackdropLabel">Advertencia</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body">                                    
                                     Esta acción no se podrá revertir.¿Estas seguro que deseas eliminar?                                
                                 </div>
                                 <div class="modal-footer">
