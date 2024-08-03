@@ -33,39 +33,21 @@ namespace Catalogo_Web.Vistas
         protected global::Catalogo_Web.User_Control.Gestiones_Productos.Filtro_Avanzado GestionArticulo;
 
         /// <summary>
-        /// Control txtBusquedaRapida_Marcas.
+        /// Control GestionMarcas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBusquedaRapida_Marcas;
+        protected global::Catalogo_Web.User_Control.Gestiones_Productos.Gestion_Marcas GestionMarcas;
 
         /// <summary>
-        /// Control dgv_Marcas.
+        /// Control GestionCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgv_Marcas;
-
-        /// <summary>
-        /// Control TextBox2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
-
-        /// <summary>
-        /// Control dgvCategoria.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvCategoria;
+        protected global::Catalogo_Web.User_Control.Gestion_Categoria GestionCategoria;
     }
 }

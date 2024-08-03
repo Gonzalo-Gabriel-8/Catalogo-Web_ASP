@@ -10,13 +10,24 @@ namespace Negocio
 {
     public class MarcaNegocio
     {
-        public List<Marca> listaMarca()
+        public List<Marca> listaMarca(string id = "")
         {
             AccesoDatos datos = new AccesoDatos();
             List<Marca> marcas = new List<Marca>();
             try
             {
-                datos.SetearConsulta("select id, descripcion from MARCAS");
+                string consulta = "Select Id, Descripcion FROM MARCAS ";
+
+                if (id != "")
+                {
+                    consulta += "WHERE Id = @Id";
+                    datos.SetearConsulta(consulta);
+                    datos.SetearParametros("@Id", id);
+                }
+                else
+                {
+                    datos.SetearConsulta(consulta);
+                }
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -43,9 +54,8 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("insert into MARCAS values (@Descripcion)");
+                datos.SetearConsulta("insert into MARCAS (Descripcion) values (@Descripcion)");
                 datos.SetearParametros("@Descripcion", nuevo.Descripcion);
-
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
@@ -64,12 +74,10 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("update MARCAS set Descripcion= @descripcion where Id=@id");
+                datos.SetearConsulta("update MARCAS set Descripcion= @descripcion where Id= @Id");
                 datos.SetearParametros("@descripcion", modificado.Descripcion);
                 datos.SetearParametros("@id", modificado.Id);
                 datos.EjecutarAccion();
-                
-
             }
             catch (Exception)
             {

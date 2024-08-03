@@ -11,7 +11,7 @@ namespace Catalogo_Web.Vistas
 {
 
 
-    public partial class Formulario_Marca
+    public partial class Formulario_Categoria
     {
 
         /// <summary>
@@ -33,22 +33,22 @@ namespace Catalogo_Web.Vistas
         protected global::System.Web.UI.WebControls.Label lblDescripcion;
 
         /// <summary>
-        /// Control txtEditarMarca.
+        /// Control txtEditarCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEditarMarca;
+        protected global::System.Web.UI.WebControls.TextBox txtEditarCategoria;
 
         /// <summary>
-        /// Control txtNuevaMarca.
+        /// Control txtNuevaCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNuevaMarca;
+        protected global::System.Web.UI.WebControls.TextBox txtNuevaCategoria;
 
         /// <summary>
         /// Control btnAceptar.
