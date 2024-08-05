@@ -2,45 +2,46 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../Styles/Default.css" rel="stylesheet" />
-   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <asp:Repeater ID="RepeaterCarrusel" runat="server">
-                <ItemTemplate>
-                    <div class="carousel-item <%# Container.ItemIndex == 0 ? "active" : "" %>">
-                        <img src='<%# Eval("ImagenUrl") %>' class="d-block" alt="...">
-                    </div>
-                </ItemTemplate>
-
-            </asp:Repeater>
+    <%if (carrucel)
+        {%>
+    <div style="margin-top: 70px">
+        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <asp:Repeater ID="RepeaterCarrusel" runat="server">
+                    <ItemTemplate>
+                        <div class="carousel-item <%# Container.ItemIndex == 0 ? "active" : "" %>">
+                            <img src='<%# Eval("ImagenUrl") %>' class="d-block" alt="...">
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
         </div>
-    </div>    
+    </div>
+    <%} %>
     <%---------------------------------------------Cards--------------------------------------%>
-    <div class="row row-cols-1 row-cols-md-5 g-4">
+    <div class="col-6">
+        <div class="mb-3">
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-6 g-4">
         <asp:Repeater ID="repRepetidor" ViewStateMode="Disabled" runat="server">
             <ItemTemplate>
-                <div class="col">
-                    <div class="card h-100 border-dark" style="max-width: 16rem;">
-                        <div class="card-img-container">
-                            <img src="<%#Eval("ImagenUrl") %>" class="card-img-top img-fluid" alt="...">
-                        </div>
-                        <div class="card-body p-2">
-                            <h5 class="card-title h6"><%#Eval("Nombre")%></h5>
-                            <p class="card-text small"><%#Eval("Codigo") %></p>
-                            <div class="mb-3">
-                                <a href="../Vistas/Detalle.aspx?id=<%#Eval("Id") %>" class="btn btn-outline-primary btn-sm" style="text-align:center" >Ver Detalle</a>
+                <a href="../Vistas/Detalle.aspx?id=<%#Eval("Id") %>" style="text-decoration: unset">
+                    <div class="col">
+                        <div class="card h-100 border-dark" style="max-width: 16rem;">
+                            <div class="card-img-container">
+                                <img src="<%#Eval("ImagenUrl") %>" class="card-img-top img-fluid" alt="...">
+                            </div>
+                            <div class="card-body p-2">
+                                <h5 class="card-title h6"><%#Eval("Nombre")%></h5>
+                                <p class="card-text small"><%#Eval("Precio") %></p>
 
                             </div>
-                            <div class="mb-3">
-                                <a href="../Vistas/Favoritos.aspx?id=<%#Eval("Id") %>" class="btn btn-outline-danger btn-sm" style="text-align: center">Favoritos</a>
-                            </div>
-
                         </div>
                     </div>
-                </div>
+                </a>
             </ItemTemplate>
         </asp:Repeater>
     </div>

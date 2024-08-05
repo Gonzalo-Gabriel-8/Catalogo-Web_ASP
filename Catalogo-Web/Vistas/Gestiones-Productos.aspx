@@ -2,7 +2,9 @@
 
 <%@ Register Src="~/User Control/Gestiones-Productos/Gestion-Articulo.ascx" TagPrefix="uc1" TagName="GestionArticulo" %>
 <%@ Register Src="~/User Control/Gestiones-Productos/Gestion-Marcas.ascx" TagPrefix="uc1" TagName="GestionMarcas" %>
-<%@ Register Src="~/User Control/Gestion-Categoria.ascx" TagPrefix="uc1" TagName="GestionCategoria" %>
+<%@ Register Src="~/User Control/Gestiones-Productos/Gestion-Categoria.ascx" TagPrefix="uc1" TagName="GestionCategoria" %>
+
+
 
 
 
@@ -21,7 +23,7 @@
     <div class="container-fluid">
         <div class="row">
             <uc1:GestionMarcas runat="server" ID="GestionMarcas" />
-            <uc1:GestionCategoria runat="server" id="GestionCategoria" />
+           <uc1:GestionCategoria runat="server" ID="GestionCategoria1" />
         </div>
     </div>
 </asp:Content>

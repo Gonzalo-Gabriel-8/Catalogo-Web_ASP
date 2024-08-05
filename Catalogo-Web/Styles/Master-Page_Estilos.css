@@ -1,0 +1,46 @@
+﻿.search-results-container {
+    margin-top: 70px;
+    margin-left: 100px;
+    margin-right: auto;
+    display: block;
+}
+
+.search-result-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.search-result-card {
+    display: flex;
+    align-items: center;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-result-img-container {
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.search-result-img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+
+.search-result-body {
+    flex-grow: 1;
+}
+
+.search-result-title {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.search-result-price, .search-result-description, .search-result-code {
+    font-size: 0.875rem;
+    margin: 5px 0;
+}

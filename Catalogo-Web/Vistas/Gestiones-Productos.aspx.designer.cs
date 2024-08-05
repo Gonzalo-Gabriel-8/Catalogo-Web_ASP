@@ -42,12 +42,12 @@ namespace Catalogo_Web.Vistas
         protected global::Catalogo_Web.User_Control.Gestiones_Productos.Gestion_Marcas GestionMarcas;
 
         /// <summary>
-        /// Control GestionCategoria.
+        /// Control GestionCategoria1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Catalogo_Web.User_Control.Gestion_Categoria GestionCategoria;
+        protected global::Catalogo_Web.User_Control.Gestion_Categoria GestionCategoria1;
     }
 }

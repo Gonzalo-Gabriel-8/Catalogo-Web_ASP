@@ -1,0 +1,52 @@
+﻿.card-container {
+    margin-top: 150px;
+    text-align: left;
+    justify-content: flex-end;
+    display: flex;
+    
+}
+
+.custom-card {
+    width: 100%;
+    max-width: none;
+    padding:10px;
+    
+}
+
+.img-fluid {
+    border: none;
+}
+.img-imagen {
+    max-width: 350px; /* Tamaño máximo del ancho */
+    max-height: 350px; /* Tamaño máximo de la altura */
+    width: auto; /* Ajusta el ancho automáticamente */
+    height: auto; /* Ajusta la altura automáticamente */
+    object-fit: contain; /* Mantiene la imagen completa dentro del contenedor */
+    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+    .img-imagen:hover {
+        transform: scale(1.2); /* Aumento de la imagen al pasar el ratón */
+    }
+
+.text-container {
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borde simple y sutil */
+    position: relative;
+    padding-left: 10px; /* Separación interna de 5px */
+    padding-top: 10px
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 5rem;
+    color: blue;
+    cursor: pointer;
+}
+
+    .favorite-btn:hover {
+        transform: scale(1.2)
+    }
