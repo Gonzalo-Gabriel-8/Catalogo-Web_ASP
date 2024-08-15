@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using Acceso_Datos;
 using Dominio;
 using Negocio;
 
@@ -15,8 +16,11 @@ namespace Catalogo_Web.Vistas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-          
-        }       
+            if (!Seguridad.IsAdmin(Session["usuario"]))
+            {
+                Response.Redirect("../Vistas/Error.aspx", false);
+            }
+        }
     }
 
 

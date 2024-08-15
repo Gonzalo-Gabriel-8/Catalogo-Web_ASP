@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Acceso_Datos;
+using Dominio;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,26 +14,39 @@ namespace Catalogo_Web.Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string nombre = "Roberto";
-            string Apellido = "Perez";
-            string Email = "gonzalogabrielgarcia@outlook.com";
-
-
-            miAvatar.ImageUrl = "https://sm.ign.com/t/ign_es/news/n/netflixs-a/netflixs-avatar-the-last-airbender-adds-george-takei-amber-m_pe4h.1280.jpg";
-            ////lblNombre.Text = nombre;
-            ////lblApellido.Text = Apellido;
-            //lblEmail.Text = Email;
-            //lblNombre_Apellido.Text = nombre + Apellido;
-            //lblInfo_Nombre.Text = nombre;
-            //lblInfo_Email.Text = Email;
-            //lblInfo_Apellido.Text = Apellido;
-
 
         }
 
-        protected void btnEliminar_Click(object sender, EventArgs e)
+        protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                UsuarioNegocio negocio = new UsuarioNegocio();
+                Usuario usuario = (Usuario)Session["usuario"];
 
+                if (txtImagen.PostedFile.FileName != "")
+                {
+                    string ruta = Server.MapPath("../Images/");
+                    txtImagen.PostedFile.SaveAs(ruta + "perfil-" + usuario.Id + ".jpg");
+                    usuario.UrlImagenPerfil = "perfil-" + usuario.Id + ".jpg";
+                }
+                
+                    usuario.Nombre = txtNombre.Text;
+                
+                    usuario.Apellido = txtApellido.Text;
+
+
+                negocio.Actualizar(usuario);
+                Image img = (Image)Master.FindControl("imgImagen");
+                img.ImageUrl = "~/Images/" + usuario.UrlImagenPerfil;
+
+
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("Error", ex.ToString());
+            }
         }
     }
 }

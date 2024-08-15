@@ -88,12 +88,10 @@
     <Content Include="Script\Modal.js" />
     <Content Include="Script\Modo-Oscuro.js" />
     <Content Include="Styles\Default.css" />
-    <Content Include="Styles\Estilos-Detalle.css" />
-    <Content Include="Styles\Master-Page_Estilos.css" />
+    <Content Include="Styles\Detalle.css" />
+    <Content Include="Styles\Master-Page.css" />
     <Content Include="Vistas\Registro.aspx" />
-    <Content Include="Styles\Estilos-Formularios.css" />
-    <Content Include="Styles\Modo-Oscuro.css" />
-    <Content Include="Styles\Paginacion_Grilla.css" />
+    <Content Include="Styles\Formularios.css" />
     <Content Include="Vistas\Suscripcion.aspx" />
     <Content Include="User Control\Gestiones-Productos\Gestion-Categoria.ascx" />
     <Content Include="User Control\Gestiones-Productos\Gestion-Articulo.ascx" />
@@ -232,13 +230,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
     <Folder Include="Models\" />
     <Folder Include="User Control\Carrucel-Inicio-Repeater\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Acceso_Datos\Acceso_Datos.csproj">
+    <ProjectReference Include="..\Acceso_Datos\Accesorio.csproj">
       <Project>{1c2d32cd-5c73-430a-bdb5-57d55e099573}</Project>
-      <Name>Acceso_Datos</Name>
+      <Name>Accesorio</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dominio\Dominio.csproj">
       <Project>{0c4cebcc-ba3f-4e32-9bae-235fc8ec07bd}</Project>

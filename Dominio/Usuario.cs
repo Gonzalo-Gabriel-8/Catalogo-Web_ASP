@@ -8,22 +8,17 @@ namespace Dominio
 {
     public class Usuario
     {
-        public enum UserType //una especie de clase que tiene esos valores
+        public enum UserType
         {
             NORMAL = 1,
             ADMIN = 2
         }
         public int Id { get; set; }
-        public string User { get; set; }
+        public string Email { get; set; }
         public string Pass { get; set; }
-        public UserType TipoUsuario { get; set; }
-
-        //contrucctor
-        public Usuario(string user, string pass, bool admin)
-        {
-            this.User = user;
-            this.Pass = pass;
-            this.TipoUsuario = admin ? UserType.ADMIN : UserType.NORMAL;
-        }
+        public string Nombre {  get; set; }
+        public string Apellido {  get; set; }
+        public string UrlImagenPerfil {  get; set; }
+        public bool Admin { get; set; }
     }
 }

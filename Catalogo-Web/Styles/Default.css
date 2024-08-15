@@ -6,7 +6,6 @@
     align-items: center;
     justify-content: center;
 }
-
     .card-img-container img {
         max-height: 100%;
         width: auto;
@@ -14,20 +13,24 @@
     }
 
 
-
-/*tamaño de imagen*/
 .carousel-item img {
-    width: auto; /* Ajusta el ancho */
-    height: 500px; /* Ajusta la altura */
-    /*object-fit: cover;*/ /* Mantiene el aspecto de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
+    
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin-left: 100px;
 }
 
-/*tamaño de contenedor*/
+.carousel-caption {
+    max-height: auto;
+    text-align: left;
+    margin-left: 30%;
+}
+
 .carousel-inner {
-    height: 550px; /* Ajusta la altura del contenedor del carrusel */
+    height: 550px; 
     margin-bottom: 10px;
     padding-top: 50px;
 }
-
-

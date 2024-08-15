@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{7BC2F62D-CD90-45B3-8472-D8E8BBFA149F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acceso_Datos", "Acceso_Datos\Acceso_Datos.csproj", "{1C2D32CD-5C73-430A-BDB5-57D55E099573}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accesorio", "Acceso_Datos\Accesorio.csproj", "{1C2D32CD-5C73-430A-BDB5-57D55E099573}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

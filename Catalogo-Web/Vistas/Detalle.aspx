@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master-Gonza.Master" AutoEventWireup="true" CodeBehind="Detalle.aspx.cs" Inherits="Catalogo_Web.Vistas.Detalle" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../Styles/Estilos-Detalle.css" rel="stylesheet" />
+    <link href="../Styles/Detalle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%if (detalle)
@@ -28,10 +28,11 @@
                                         <asp:Label ID="lblMarca" runat="server" /></h5>
                                     <h5 class="card-title">
                                         <asp:Label ID="lblNombre" runat="server" /></h5>
-                                    <h4 class="card-title">$<asp:Label ID="lblPrecio" runat="server" /></h4>
-                                    <p class="card-text">
+                                    <h5 class="card-text">
                                         <asp:Label ID="lblCodigo" runat="server" />
-                                    </p>
+                                    </h5>
+                                    <h4 class="card-title">$<asp:Label ID="lblPrecio" runat="server" /></h4>
+
                                     <p class="card-text">
                                         <small class="text-body-secondary">
                                             <asp:Label ID="lblDescripcion" runat="server" /></small>

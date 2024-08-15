@@ -25,10 +25,12 @@ namespace Catalogo_Web.Vistas
                 List<Articulo> lista = (List<Articulo>)Session["Listado"];
                 List<Articulo> filtrada = lista.Where(x => x.Precio > 0).ToList();
                 Session["Listado"] = filtrada;
-                RepeaterCarrusel.DataSource= filtrada;
+                RepeaterCarrusel.DataSource = filtrada;
                 RepeaterCarrusel.DataBind();
+                RepeaterIndicators.DataSource = filtrada;
+                RepeaterIndicators.DataBind();
                 repRepetidor.DataSource = filtrada;
-                repRepetidor.DataBind();             
+                repRepetidor.DataBind();
 
             }
 

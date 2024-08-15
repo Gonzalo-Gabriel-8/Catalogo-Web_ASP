@@ -61,6 +61,7 @@ namespace Acceso_Datos
                 throw ex;
             }
         }
+      
         public int EjecutarAccionScalar()
         {
             comando.Connection = conexion;

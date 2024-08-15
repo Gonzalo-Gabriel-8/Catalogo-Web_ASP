@@ -9,8 +9,7 @@
 .custom-card {
     width: 100%;
     max-width: none;
-    padding:10px;
-    
+    padding: 10px;
 }
 
 .img-fluid {
@@ -23,6 +22,8 @@
     height: auto; /* Ajusta la altura automáticamente */
     object-fit: contain; /* Mantiene la imagen completa dentro del contenedor */
     transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+    padding-right:60px;
+    padding-left:60px;
 }
 
     .img-imagen:hover {

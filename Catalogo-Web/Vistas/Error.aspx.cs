@@ -11,7 +11,7 @@ namespace Catalogo_Web.Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblError.Text = Session["usuario"].ToString();
         }
     }
 }

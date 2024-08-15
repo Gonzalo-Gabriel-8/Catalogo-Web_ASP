@@ -16,6 +16,7 @@ namespace Catalogo_Web.Vistas
         public bool botonEliminar = false;
         protected void Page_Load(object sender, EventArgs e)
         {
+
             txtId.Enabled = false;
             try
             {
