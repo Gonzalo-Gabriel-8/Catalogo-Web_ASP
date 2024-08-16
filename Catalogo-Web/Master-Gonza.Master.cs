@@ -18,28 +18,26 @@ namespace Catalogo_Web
         public bool repCarrucel = false;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!(Page is Registro || Page is Default || Page is Detalle || Page is Error))
+            imgImagen.ImageUrl = "https://th.bing.com/th/id/R.cb6407042d307d6e07c7b5818f57d504?rik=osJEzH15cv8H%2bw&pid=ImgRaw&r=0";
+            if (!(Page is Default || Page is Detalle || Page is Error || Page is Registro))
             {
                 if (!Seguridad.sessionActiva(Session["usuario"]))
                 {
                     Response.Redirect("../Vistas/Registro.aspx", false);
                 }
-                else
-                {
-                    Usuario usuario =(Usuario) Session["usuario"];
-                    lblSaludo.Text = usuario.Nombre;
-                }
-                
             }
             if (Seguridad.sessionActiva(Session["usuario"]))
             {
+                Usuario usuario = (Usuario)Session["usuario"];
+                lblSaludo.Text = "Bievenido " + usuario.Nombre; 
+                if(!string.IsNullOrEmpty(usuario.UrlImagenPerfil))
                 imgImagen.ImageUrl = "~/Images/" + ((Usuario)Session["usuario"]).UrlImagenPerfil;
             }
-            else
-                imgImagen.ImageUrl = "https://th.bing.com/th/id/R.cb6407042d307d6e07c7b5818f57d504?rik=osJEzH15cv8H%2bw&pid=ImgRaw&r=0";
+          
+
             if (Page is Default || Page is Detalle)
-            { 
-                
+            {
+
                 txtBusqueda = true;
                 ArticuloNegocio negocio = new ArticuloNegocio();
                 Session.Add("Listado", negocio.listar());
@@ -53,27 +51,43 @@ namespace Catalogo_Web
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            Usuario usuario= new Usuario();
-            UsuarioNegocio negocio= new UsuarioNegocio();
+            Usuario usuario = new Usuario();
+            UsuarioNegocio negocio = new UsuarioNegocio();
             try
             {
+                if (!Validacion.validaTextoVacio(txtEmail))
+                {
+                    Session.Add("error", "Debes ingresar un Email");
+                    Response.Redirect("../Vistas/Error.aspx");
+                }
+                if (!Validacion.validaTextoVacio(txtPass))
+                {
+                    Session.Add("error", "Debes ingresar una contraseña");
+                    Response.Redirect("../Vistas/Error.aspx");
+                }
                 usuario.Email = txtEmail.Text;
                 usuario.Pass = txtPass.Text;
                 if (negocio.Loguin(usuario))
-                {
-                    Session.Add("usuario", usuario);
-                    Response.Redirect("../Vistas/MI-Perfil.aspx", false);
+                {                    
+                    Session.Add("usuario", usuario);                  
+
+                    Response.Redirect("../Vistas/Default.aspx", false);
+                    
                 }
                 else
                 {
                     Session.Add("error", "user o pass incorrectos");
-                    Session.Add("../Vistas/Error.aspx", false);
+                    Response.Redirect("../Vistas/Error.aspx", false);
                 }
+            }
+            catch (System.Threading.ThreadAbortException ex)
+            {
+
             }
             catch (Exception ex)
             {
-
-                Session.Add("../Vistas/Error.aspx", ex.ToString());
+                Session.Add("error", ex.ToString());
+                Response.Redirect("../Vistas/Error.aspx");
             }
         }
 
@@ -94,10 +108,6 @@ namespace Catalogo_Web
 
         }
 
-        protected void btnSalir_Click(object sender, EventArgs e)
-        {
-            Session.Clear();
-            Response.Redirect("../Vistas/Default.aspx", false);
-        }
+        
     }
 }

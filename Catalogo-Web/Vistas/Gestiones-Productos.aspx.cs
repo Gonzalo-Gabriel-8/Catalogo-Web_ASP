@@ -18,6 +18,7 @@ namespace Catalogo_Web.Vistas
         {
             if (!Seguridad.IsAdmin(Session["usuario"]))
             {
+                Session.Add("Error", "Necesitas permisos de Administrador");
                 Response.Redirect("../Vistas/Error.aspx", false);
             }
         }

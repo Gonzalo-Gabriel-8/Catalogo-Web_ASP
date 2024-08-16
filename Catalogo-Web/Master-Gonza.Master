@@ -44,11 +44,12 @@
                         <div>
                             <div class="mb-3">
                                 <label id="lblEmail" class="form-label">Correo</label>
-                                <asp:TextBox ID="txtEmail" CssClass="form-control" placeholder="email@ejemplo.com" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEmail" CssClass="form-control" placeholder="email@ejemplo.com" runat="server"></asp:TextBox>                               
+
                             </div>
                             <div class="mb-3">
                                 <label id="lblPass" class="form-label">Contraseña</label>
-                                <asp:TextBox ID="txtPass" CssClass="form-control" TextMode="Password" placeholder="Password" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtPass" CssClass="form-control" TextMode="Password" placeholder="Password" runat="server"></asp:TextBox>                                
                             </div>
                             <div class="mb-3" style="text-align: center">
                                 <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" CssClass="btn btn-outline-primary" OnClick="btnIngresar_Click" />
@@ -64,12 +65,10 @@
                     <%}
                         else
                         {%>                    
-                        <a class="navbar-brand" href="../Vistas/Mi-Perfil.aspx">
-                            <asp:Image style="border-radius:50%" width="36" height="30" ID="imgImagen" runat="server"
-                                 /> 
+                        <a class="navbar-brand" href="../Vistas/Mi-Perfil.aspx?Id= ">
+                            <asp:Image style="border-radius:50%" width="42" height="36" ID="imgImagen" runat="server"                                 /> 
                         </a>                      
-                    <asp:Label Text="Hola" ID="lblSaludo" runat="server" />
-                    <asp:Button Text="Salir" CssClass="btn btn-outline-secondary" ID="btnSalir" OnClick="btnSalir_Click" runat="server" />
+                    <asp:Label ID="lblSaludo" CssClass="form-label" Runat="server" />                  
                    
                     <%}%>
                 </div>
@@ -84,19 +83,15 @@
                         <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="../Vistas/Default.aspx">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../Vistas/Mi-Perfil.aspx">Mi Perfil</a>
-                            </li>
+                            </li>     
+                            
                             <li class="nav-item">
                                 <a class="nav-link" href="../Vistas/Gestiones-Productos.aspx">Gestión de Productos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../Vistas/Favoritos.aspx">Favoritos</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../Vistas/Suscripcion.aspx">Suscribirse</a>
-                            </li>
+                           
                         </ul>
                     </div>
                 </div>

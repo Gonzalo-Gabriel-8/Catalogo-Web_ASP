@@ -7,15 +7,26 @@
         <div class="row">
             <div class="col-4">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Dirección de Correo</label>
+                    <asp:Label Text="Email" CssClass="form-label" runat="server" />
                     <asp:TextBox ID="txtEmail" TextMode="Email" CssClass="form-control" runat="server" />
+                    <asp:RequiredFieldValidator ErrorMessage="El Email es requerido" ControlToValidate="txtEmail" runat="server" />
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <asp:Label Text="Contraseña" CssClass="form-label" runat="server" />
                     <asp:TextBox ID="txtPass" TextMode="Password" CssClass="form-control" runat="server" />
+                    <asp:RequiredFieldValidator ErrorMessage="la contraseña es requerida" ControlToValidate="txtPass" runat="server" />
                 </div>
                 <div class="mb-3">
-
+                    <asp:Label Text="Nombre" CssClass="form-label" runat="server" />
+                    <asp:TextBox ID="txtNombre" CssClass="form-control" runat="server" />
+                    <asp:RequiredFieldValidator ErrorMessage="El nombre es requerido" ControlToValidate="txtNombre" runat="server" />
+                </div>
+                <div class="mb-3">
+                    <asp:Label Text="Apellido" CssClass="form-label" runat="server" />
+                    <asp:TextBox ID="txtApellido" CssClass="form-control" runat="server" />
+                    <asp:RequiredFieldValidator ErrorMessage="El apellido es requerido" ControlToValidate="txtApellido" runat="server" />
+                </div>
+                <div class="mb-3">
                     <asp:Button Text="Registrarse" CssClass="btn btn-outline-primary" ID="btnIngresar"
                         runat="server" OnClick="btnIngresar_Click" />
                 </div>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Acceso_Datos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,12 @@ namespace Catalogo_Web.Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblError.Text = Session["usuario"].ToString();
+            if (Seguridad.sessionActiva(Session["usuario"]))
+            {
+                lblError.Text = Session["usuario"].ToString();
+            }
+            else
+                lblError.Text = Session["error"].ToString();
         }
     }
 }

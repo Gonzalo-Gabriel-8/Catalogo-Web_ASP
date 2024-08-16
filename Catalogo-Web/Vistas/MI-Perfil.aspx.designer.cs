@@ -33,6 +33,15 @@ namespace Catalogo_Web.Vistas
         protected global::System.Web.UI.WebControls.Label lblNombre;
 
         /// <summary>
+        /// Control lblApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblApellido;
+
+        /// <summary>
         /// Control lblEmail.
         /// </summary>
         /// <remarks>
@@ -42,13 +51,13 @@ namespace Catalogo_Web.Vistas
         protected global::System.Web.UI.WebControls.Label lblEmail;
 
         /// <summary>
-        /// Control lblApellido.
+        /// Control txtId.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblApellido;
+        protected global::System.Web.UI.WebControls.TextBox txtId;
 
         /// <summary>
         /// Control txtNombre.
@@ -69,6 +78,15 @@ namespace Catalogo_Web.Vistas
         protected global::System.Web.UI.WebControls.TextBox txtApellido;
 
         /// <summary>
+        /// Control txtEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
         /// Control txtPass.
         /// </summary>
         /// <remarks>
@@ -87,12 +105,30 @@ namespace Catalogo_Web.Vistas
         protected global::System.Web.UI.HtmlControls.HtmlInputFile txtImagen;
 
         /// <summary>
-        /// Control btnGuardar.
+        /// Control btnEliminar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
+        protected global::System.Web.UI.WebControls.Button btnEliminar;
+
+        /// <summary>
+        /// Control btnRegistrarse.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegistrarse;
+
+        /// <summary>
+        /// Control btnSalir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSalir;
     }
 }
