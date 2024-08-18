@@ -5,16 +5,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-   <style>
-    .img-imagen {
-        max-width: 200px; 
-        max-height: 200px; 
-        width: auto; 
-        height: auto; 
-        object-fit: contain; 
-        display: block; 
-    }
-</style>
+    <style>
+        .img-imagen {
+            max-width: 200px;
+            max-height: 200px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+    </style>
     <div class="container-fluid" style="margin-top: 70px">
         <div class="row">
             <div class="col-6">
@@ -27,16 +27,20 @@
                 <div class="mb-3">
                     <label for="txtCodigo" class="form-label">Codigo:</label>
                     <asp:TextBox runat="server" ID="txtCodigo" CssClass="form-control" />
+                    <asp:RegularExpressionValidator ID="regexValidator" ControlToValidate="txtCodigo" ErrorMessage="Hasta 50 caracteres"
+                        ValidationExpression="^.{0,50}$" runat="server" />
                 </div>
                 <%-- Carga de Nombre --%>
                 <div class="mb-3">
                     <label for="txtNombre" class="form-label">Nombre</label>
                     <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="txtNombre" ErrorMessage="Hasta 50 caracteres"
+                        ValidationExpression="^.{0,50}$" runat="server" />
                 </div>
                 <%-- Carga de Precio --%>
                 <div class="mb-3">
                     <label for="txtPrecio" class="form-label">Precio</label>
-                    <asp:TextBox runat="server" ID="txtPrecio" CssClass="form-control" />
+                    <asp:TextBox runat="server" PlaceHolder="$" ID="txtPrecio" CssClass="form-control" />
                 </div>
                 <%--Carga Desplegable de Categoria--%>
                 <div class="mb-3">
@@ -55,13 +59,17 @@
                 <div class="mb-3">
                     <label for="txtDescripcion" class="form-label">Descripcion</label>
                     <asp:TextBox TextMode="MultiLine" runat="server" ID="txtDescripcion" CssClass="form-control" />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="txtDescripcion" ErrorMessage="Hasta 150 caracteres"
+                        ValidationExpression="^.{0,150}$" runat="server" />
                 </div>
                 <%-- Carga de Imagen con Actualizacion --%>
                 <asp:UpdatePanel ID="UpdatePanel" runat="server">
                     <ContentTemplate>
                         <label for="txtUrlImagen" class="form-label">URL Imagen:</label>
                         <asp:TextBox runat="server" ID="txtUrlImagen" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtUrlImagen_TextChanged" />
-                        <asp:Image ID="imgArticulo" CssClass="img-imagen" runat="server"  ImageUrl="https://epichotelsanluis.com/wp-content/uploads/2022/11/placeholder-2.png" />
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ControlToValidate="txtUrlImagen" ErrorMessage="Hasta 1000 caracteres"
+                            ValidationExpression="^.{0,1000}$" runat="server" />
+                        <asp:Image ID="imgArticulo" CssClass="img-imagen" runat="server" ImageUrl="https://epichotelsanluis.com/wp-content/uploads/2022/11/placeholder-2.png" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
@@ -73,7 +81,7 @@
             <div class="col-6">
                 <div class="mb-5">
                     <asp:Button ID="btnAceptar" Text="Aceptar" CssClass="btn btn-outline-primary" OnClick="btnAceptar_Click" runat="server" />
-                    
+
                     <a href="../Vistas/Gestiones-Productos.aspx" class="btn btn-outline-secondary">Cancelar</a>
 
 
@@ -87,9 +95,9 @@
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="staticBackdropLabel">Advertencia</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    
+
                                 </div>
-                                <div class="modal-body">                                    
+                                <div class="modal-body">
                                     Esta acción no se podrá revertir.¿Estas seguro que deseas eliminar?                                
                                 </div>
                                 <div class="modal-footer">

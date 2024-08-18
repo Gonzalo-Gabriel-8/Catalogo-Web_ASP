@@ -54,8 +54,8 @@ namespace Catalogo_Web.Vistas
                     usuario.UrlImagenPerfil = "perfil-" + usuario.Id + ".jpg";
 
                 }
-                if (Validacion.validaTextoVacio(txtApellido.Text) || Validacion.validaTextoVacio(txtNombre.Text) ||
-                    Validacion.validaTextoVacio(txtPass.Text))
+                if (!(Validacion.validaTextoVacio(txtApellido.Text) || Validacion.validaTextoVacio(txtNombre.Text) ||
+                    Validacion.validaTextoVacio(txtPass.Text)))
                 {
                     usuario.Nombre = txtNombre.Text;
                     usuario.Apellido = txtApellido.Text;

@@ -81,6 +81,9 @@ namespace Catalogo_Web.Vistas
         {
             try
             {
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
                 Articulo articulo = new Articulo();
                 ArticuloNegocio negocio = new ArticuloNegocio();
 

@@ -20,6 +20,8 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <a href="../Vistas/Default.aspx"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3243839/c-icon-md.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top"></a>
+                 
                 <a class="navbar-brand" href="../Vistas/Default.aspx" style="text-align: left; margin-right: auto; margin-left: 10px";>Inicio</a>        
 
                 <div class="col-6" style="margin-left: 10px; margin-right: auto">
