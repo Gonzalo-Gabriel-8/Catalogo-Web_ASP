@@ -18,7 +18,7 @@ namespace Catalogo_Web.Vistas
         {
             if (!Seguridad.IsAdmin(Session["usuario"]))
             {
-                Session.Add("Error", "Necesitas permisos de Administrador");
+                Session.Add("error", "Se requiere permisos de admin para acceder a esta pantalla");
                 Response.Redirect("../Vistas/Error.aspx", false);
             }
         }

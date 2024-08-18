@@ -9,6 +9,7 @@ using Catalogo_Web.Vistas;
 using Dominio;
 using Negocio;
 using Acceso_Datos;
+using Favoritos = Catalogo_Web.Vistas.Favoritos;
 
 namespace Catalogo_Web
 {
@@ -19,7 +20,7 @@ namespace Catalogo_Web
         protected void Page_Load(object sender, EventArgs e)
         {
             imgImagen.ImageUrl = "https://th.bing.com/th/id/R.cb6407042d307d6e07c7b5818f57d504?rik=osJEzH15cv8H%2bw&pid=ImgRaw&r=0";
-            if (!(Page is Default || Page is Detalle || Page is Error || Page is Registro))
+            if (!(Page is Default || Page is Detalle || Page is Error || Page is Registro || Page is Favoritos))
             {
                 if (!Seguridad.sessionActiva(Session["usuario"]))
                 {

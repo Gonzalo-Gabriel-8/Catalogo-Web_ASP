@@ -1,0 +1,10 @@
+﻿.card mb-3 {
+    max-width: 540px;    
+}
+.container{
+    margin-top:70px;
+}
+.col-md-4 {
+    max-height: 200px;
+    max-width: 200px
+}

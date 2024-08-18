@@ -1,4 +1,5 @@
-﻿using Dominio;
+﻿using Acceso_Datos;
+using Dominio;
 using Negocio;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,11 @@ namespace Catalogo_Web.Vistas
         public bool MarcaID = false;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Seguridad.IsAdmin(Session["usuario"]))
+            {
+                Session.Add("error", "Se requiere permisos de admin para acceder a esta pantalla");
+                Response.Redirect("../Vistas/Error.aspx", false);
+            }
             try
             {
                 string Id = Request.QueryString["id"] != null ? Request.QueryString["id"].ToString() : "";

@@ -45,9 +45,26 @@
     border: none;
     font-size: 5rem;
     color: blue;
+    cursor: pointer;    
+}
+   
+    .favorite-btn:hover {
+        transform: scale(1.2)
+    }
+
+.favorite-btn-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 5rem;
+    color: blue;
     cursor: pointer;
+    max-width: 35px;
+    max-height: 35px;
 }
 
-    .favorite-btn:hover {
+    .favorite-btn-btn:hover {
         transform: scale(1.2)
     }

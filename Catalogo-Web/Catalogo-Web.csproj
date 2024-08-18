@@ -85,14 +85,15 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Imagenes\heart-3510.png" />
+    <Content Include="Imagenes\pngwing.com.png" />
     <Content Include="Script\Modal.js" />
     <Content Include="Script\Modo-Oscuro.js" />
     <Content Include="Styles\Default.css" />
     <Content Include="Styles\Detalle.css" />
+    <Content Include="Styles\Favoritos.css" />
     <Content Include="Styles\Master-Page.css" />
     <Content Include="Vistas\Registro.aspx" />
     <Content Include="Styles\Formularios.css" />
-    <Content Include="Vistas\Suscripcion.aspx" />
     <Content Include="User Control\Gestiones-Productos\Gestion-Categoria.ascx" />
     <Content Include="User Control\Gestiones-Productos\Gestion-Articulo.ascx" />
     <Content Include="User Control\Gestiones-Productos\Gestion-Marcas.ascx" />
@@ -125,13 +126,6 @@
     </Compile>
     <Compile Include="Vistas\Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\Suscripcion.aspx.cs">
-      <DependentUpon>Suscripcion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Suscripcion.aspx.designer.cs">
-      <DependentUpon>Suscripcion.aspx</DependentUpon>
     </Compile>
     <Compile Include="User Control\Gestiones-Productos\Gestion-Categoria.ascx.cs">
       <DependentUpon>Gestion-Categoria.ascx</DependentUpon>

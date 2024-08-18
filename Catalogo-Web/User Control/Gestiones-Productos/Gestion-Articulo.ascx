@@ -16,7 +16,7 @@
 <div class="row">
     <div class="col-6">
         <div class="mb-3">
-            <asp:TextBox PlaceHolder="Buscar Articulo" ID="txtBusquedaRapida" CssClass="form-control"
+            <asp:TextBox PlaceHolder="Buscar Articulo por nombre" ID="txtBusquedaRapida" CssClass="form-control"
                 runat="server" AutoPostBack="true" OnTextChanged="txtBusquedaRapida_TextChanged" />
         </div>
     </div>
@@ -34,12 +34,11 @@
         <div class="mb-3">
             <%if (ckbFiltroAvanzado.Checked)
                 {%>
-
             <div class="row">
-                <div class="col-2" style="margin: auto">
+                <div class="col-2">
                     <div class="mb-3">
                         <label>Campo</label>
-                        <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control" ID="ddlCampos" 
+                        <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control" ID="ddlCampos"
                             OnSelectedIndexChanged="ddlCampo_SelectedIndexChanged">
                             <asp:ListItem Text="" />
                             <asp:ListItem Text="Nombre" />
@@ -70,12 +69,15 @@
                     <div class="mb-3">
                         <asp:Label ID="Label2" runat="server" Text="Filtro"></asp:Label>
                         <asp:TextBox runat="server" ID="txtFiltroAvanzado" CssClass="form-control" />
+                        <asp:RequiredFieldValidator ErrorMessage="Debes completar este campo" ControlToValidate="txtFiltroAvanzado" runat="server" />
                     </div>
                 </div>
                 <div class="col-1" style="margin-top: auto; text-align: right">
                     <div class="mb-3">
-                        <asp:Button Text="✅ Filtrar" runat="server" CssClass="btn btn-outline" ID="btnBuscar" OnClick="btnBuscar_Click" />
-                         <asp:Button Text="Limpiar" runat="server" CssClass="btn btn-outline" ID="BtnLimpiar" OnClick="BtnLimpiar_Click"  />
+                        <asp:Button Text="✅ Filtrar   " runat="server" CssClass="btn btn-outline-primary" ID="btnBuscar" OnClick="btnBuscar_Click" />
+                    </div>
+                    <div class="mb-3">
+                        <asp:Button Text="🗑 Limpiar" runat="server" CssClass="btn btn-outline-secondary" ID="BtnLimpiar" OnClick="BtnLimpiar_Click" />
                     </div>
                 </div>
             </div>

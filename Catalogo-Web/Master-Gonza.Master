@@ -9,8 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="Styles/Master-Page.css" rel="stylesheet" />
-    <link href="Styles/Detalle.css" rel="stylesheet" />
-    <title>Catálogo web</title>
+    <link href="Styles/Detalle.css" rel="stylesheet" />    
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -84,10 +83,14 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="../Vistas/Default.aspx">Inicio</a>
                             </li>     
-                            
+                            <%if (Acceso_Datos.Seguridad.IsAdmin(Session["usuario"]))
+                                {%> 
                             <li class="nav-item">
-                                <a class="nav-link" href="../Vistas/Gestiones-Productos.aspx">Gestión de Productos</a>
+                                 <a class="nav-link" href="../Vistas/Gestiones-Productos.aspx">Gestión de Productos</a>
                             </li>
+
+                            <% } %>
+                            
                             <li class="nav-item">
                                 <a class="nav-link" href="../Vistas/Favoritos.aspx">Favoritos</a>
                             </li>

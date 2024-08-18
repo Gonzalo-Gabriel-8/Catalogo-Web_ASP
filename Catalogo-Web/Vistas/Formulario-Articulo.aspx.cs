@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Catalogo_Web.Vistas;
+using Acceso_Datos;
 
 
 namespace Catalogo_Web.Vistas
@@ -16,6 +17,11 @@ namespace Catalogo_Web.Vistas
         public bool botonEliminar = false;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Seguridad.IsAdmin(Session["usuario"]))
+            {
+                Session.Add("error", "Se requiere permisos de admin para acceder a esta pantalla");
+                Response.Redirect("../Vistas/Error.aspx", false);
+            }
 
             txtId.Enabled = false;
             try

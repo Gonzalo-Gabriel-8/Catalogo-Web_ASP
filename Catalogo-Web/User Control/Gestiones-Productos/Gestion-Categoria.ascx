@@ -17,7 +17,8 @@
              <asp:UpdatePanel runat="server">
                  <ContentTemplate>
                      <asp:GridView runat="server" ID="dgvCategoria" AutoGenerateColumns="false"
-                         CssClass="table" DataKeyNames="Id" OnSelectedIndexChanged="dgvCategoria_SelectedIndexChanged">
+                         CssClass="table" DataKeyNames="Id" OnSelectedIndexChanged="dgvCategoria_SelectedIndexChanged"
+                         AllowPaging="true" PageSize="5" OnPageIndexChanging="dgvCategoria_PageIndexChanging">
                          <Columns>
                              <asp:BoundField HeaderText="Categorías" DataField="Descripcion" />
                              <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="✏"

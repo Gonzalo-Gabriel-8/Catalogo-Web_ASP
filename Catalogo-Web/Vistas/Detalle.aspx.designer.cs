@@ -42,13 +42,22 @@ namespace Catalogo_Web.Vistas
         protected global::System.Web.UI.WebControls.Image imgArticulo;
 
         /// <summary>
-        /// Control ImageButton1.
+        /// Control btnFavoritos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        protected global::System.Web.UI.WebControls.ImageButton btnFavoritos;
+
+        /// <summary>
+        /// Control btnFavoritos2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnFavoritos2;
 
         /// <summary>
         /// Control lblMarca.

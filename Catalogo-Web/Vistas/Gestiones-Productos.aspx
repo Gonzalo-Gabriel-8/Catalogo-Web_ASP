@@ -4,13 +4,10 @@
 <%@ Register Src="~/User Control/Gestiones-Productos/Gestion-Marcas.ascx" TagPrefix="uc1" TagName="GestionMarcas" %>
 <%@ Register Src="~/User Control/Gestiones-Productos/Gestion-Categoria.ascx" TagPrefix="uc1" TagName="GestionCategoria" %>
 
-
-
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../Script/Modal.js"></script>
     <link href="../Styles/Paginacion_Grilla.css" rel="stylesheet" />
+    <title>Gestiones de Productos</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>

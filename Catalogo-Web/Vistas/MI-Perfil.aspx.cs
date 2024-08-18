@@ -21,19 +21,21 @@ namespace Catalogo_Web.Vistas
                     Usuario usuario = (Usuario)Session["usuario"];
                     lblNombre.Text = usuario.Nombre;
                     lblApellido.Text = usuario.Apellido;
-                    lblEmail.Text= usuario.Email;
+                    lblEmail.Text = usuario.Email;
 
-                    txtId.Visible=false;
+                    txtId.Visible = false;
                     txtId.Text = usuario.Id.ToString(); ;
                     txtApellido.Text = usuario.Apellido;
                     txtNombre.Text = usuario.Nombre;
                     txtEmail.ReadOnly = true;
                     txtEmail.Text = usuario.Email;
-                    txtPass.Attributes["Value"]=usuario.Pass;
+                    txtPass.Attributes["Value"] = usuario.Pass;
                     if (!string.IsNullOrEmpty(usuario.UrlImagenPerfil))
                     {
                         miAvatar.ImageUrl = "~/Images/" + usuario.UrlImagenPerfil;
                     }
+                    else
+                        miAvatar.ImageUrl = "https://th.bing.com/th/id/R.cb6407042d307d6e07c7b5818f57d504?rik=osJEzH15cv8H%2bw&pid=ImgRaw&r=0";
                 }
             }
 
@@ -52,18 +54,16 @@ namespace Catalogo_Web.Vistas
                     usuario.UrlImagenPerfil = "perfil-" + usuario.Id + ".jpg";
 
                 }
-                usuario.Nombre = txtNombre.Text;
-                usuario.Apellido = txtApellido.Text;
-                usuario.Pass=txtPass.Text;
-                negocio.Actualizar(usuario);
-                
-
-
+                if (Validacion.validaTextoVacio(txtApellido.Text) || Validacion.validaTextoVacio(txtNombre.Text) ||
+                    Validacion.validaTextoVacio(txtPass.Text))
+                {
+                    usuario.Nombre = txtNombre.Text;
+                    usuario.Apellido = txtApellido.Text;
+                    usuario.Pass = txtPass.Text;
+                    negocio.Actualizar(usuario);
+                }
                 Image img = (Image)Master.FindControl("imgImagen");
                 img.ImageUrl = "~/Images/" + usuario.UrlImagenPerfil;
-
-
-
             }
             catch (Exception ex)
             {

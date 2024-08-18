@@ -1,4 +1,5 @@
-﻿using Dominio;
+﻿using Acceso_Datos;
+using Dominio;
 using Negocio;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,11 @@ namespace Catalogo_Web.User_Control
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Seguridad.IsAdmin(Session["usuario"]))
+            {
+                Session.Add("error", "Se requiere permisos de admin para acceder a esta pantalla");
+                Response.Redirect("../Vistas/Error.aspx", false);
+            }
             CategoriaNegocio negocio = new CategoriaNegocio();
             Session.Add("Listado", negocio.listaCategoria());
             dgvCategoria.DataSource = Session["Listado"];
@@ -29,6 +35,15 @@ namespace Catalogo_Web.User_Control
             List<Categoria> lista = (List<Categoria>)Session["Listado"];
             List<Categoria> listaRapida = lista.FindAll(x => x.Descripcion.ToUpper().Contains(txtBusquedaRapida_Categoria.Text.ToUpper()));
             dgvCategoria.DataSource = listaRapida;
+            dgvCategoria.DataBind();
+        }
+
+        protected void dgvCategoria_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+            CategoriaNegocio negocio = new CategoriaNegocio();
+            dgvCategoria.PageIndex = e.NewPageIndex;
+            dgvCategoria.DataSource = negocio.listaCategoria();
             dgvCategoria.DataBind();
         }
     }

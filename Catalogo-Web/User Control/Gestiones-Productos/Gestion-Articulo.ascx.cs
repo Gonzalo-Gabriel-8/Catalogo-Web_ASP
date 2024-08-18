@@ -1,4 +1,5 @@
-﻿using Dominio;
+﻿using Acceso_Datos;
+using Dominio;
 using Negocio;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,15 @@ namespace Catalogo_Web.User_Control.Gestiones_Productos
 {
     public partial class Filtro_Avanzado : System.Web.UI.UserControl
     {
+
         public bool desplegar { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Seguridad.IsAdmin(Session["usuario"]))
+            {
+                Session.Add("error", "Se requiere permisos de admin para acceder a esta pantalla");
+                Response.Redirect("../Vistas/Error.aspx", false);
+            }
             if (!IsPostBack)
             {
                 ArticuloNegocio Articulo_negocio = new ArticuloNegocio();
@@ -86,6 +93,10 @@ namespace Catalogo_Web.User_Control.Gestiones_Productos
         {
             try
             {
+
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
                 ArticuloNegocio negocio = new ArticuloNegocio();
                 dgvArticulo.DataSource = negocio.filtrar(ddlCampos.SelectedIndex.ToString(),
                     ddlCriterio.SelectedItem.ToString(),
@@ -104,7 +115,10 @@ namespace Catalogo_Web.User_Control.Gestiones_Productos
         {
             ddlCampos.Items.Clear();
             ddlCriterio.Items.Clear();
-           
+            ddlEstado.Items.Clear();
+            txtFiltroAvanzado.Text = "";
+            Response.Redirect("../Vistas/Gestiones-Productos.aspx", false);
+              
         }
     }
 }

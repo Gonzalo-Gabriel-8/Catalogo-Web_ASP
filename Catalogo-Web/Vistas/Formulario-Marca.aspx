@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master-Gonza.Master" AutoEventWireup="true" CodeBehind="Formulario-Marca.aspx.cs" Inherits="Catalogo_Web.Vistas.Formulario_Marca" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../Styles/Formularios.css" rel="stylesheet" />    
+    <link href="../Styles/Formularios.css" rel="stylesheet" />   
+    <title>Formulario Marca</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">

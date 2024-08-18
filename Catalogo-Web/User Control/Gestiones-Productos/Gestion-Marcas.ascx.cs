@@ -1,4 +1,5 @@
-﻿using Dominio;
+﻿using Acceso_Datos;
+using Dominio;
 using Negocio;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,11 @@ namespace Catalogo_Web.User_Control.Gestiones_Productos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Seguridad.IsAdmin(Session["usuario"]))
+            {
+                Session.Add("error", "Se requiere permisos de admin para acceder a esta pantalla");
+                Response.Redirect("../Vistas/Error.aspx", false);
+            }
             MarcaNegocio Marca_negocio = new MarcaNegocio();
             Session.Add("ListadoMarcas", Marca_negocio.listaMarca());
             dgv_Marcas.DataSource = Session["ListadoMarcas"];

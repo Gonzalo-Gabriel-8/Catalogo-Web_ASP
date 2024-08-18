@@ -2,8 +2,30 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../Styles/Detalle.css" rel="stylesheet" />
+    <title>Detalle de Articulo</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script>
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        const appendAlert = (message, type) => {
+            const wrapper = document.createElement('div')
+            wrapper.innerHTML = [
+                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                `   <div>${message}</div>`,
+                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                '</div>'
+            ].join('')
+
+            alertPlaceholder.append(wrapper)
+        }
+
+        const alertTrigger = document.getElementById('btnFavoritos')
+        if (alertTrigger) {
+            alertTrigger.addEventListener('click', () => {
+                appendAlert('Nice, you triggered this alert message!', 'success')
+            })
+        }
+    </script>
     <%if (detalle)
         {%>
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -22,8 +44,18 @@
                             </div>
                             <div class="col-md-8 text-container">
                                 <div class="card-body">
-                                    <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Your Button Text"
-                                        ImageUrl="../Imagenes/heart-3510.png" CssClass="favorite-btn" />
+                                    <%if (cambiaImagen)
+                                        {%>
+                                    <asp:ImageButton ID="btnFavoritos" runat="server" AlternateText="Favoritos"
+                                        ImageUrl="../Imagenes/heart-3510.png" CssClass="favorite-btn" OnClick="btnFavoritos_Click" />
+                                    <%}
+                                        else
+                                        {%>
+                                    <asp:ImageButton ID="btnFavoritos2" runat="server" AlternateText="Favoritos"
+                                        ImageUrl="../Imagenes/pngwing.com.png" CssClass="favorite-btn-btn" OnClick="btnFavoritos_Click" />
+                                    <% }%>
+                                   
+
                                     <h5 class="card-title">
                                         <asp:Label ID="lblMarca" runat="server" /></h5>
                                     <h5 class="card-title">
