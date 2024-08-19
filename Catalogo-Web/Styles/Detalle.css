@@ -16,24 +16,24 @@
     border: none;
 }
 .img-imagen {
-    max-width: 350px; /* Tamaño máximo del ancho */
-    max-height: 350px; /* Tamaño máximo de la altura */
-    width: auto; /* Ajusta el ancho automáticamente */
-    height: auto; /* Ajusta la altura automáticamente */
-    object-fit: contain; /* Mantiene la imagen completa dentro del contenedor */
-    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+    max-width: 350px; 
+    max-height: 350px; 
+    width: auto; 
+    height: auto; 
+    object-fit: contain; 
+    transition: transform 0.3s ease; 
     padding-right:60px;
     padding-left:60px;
 }
 
     .img-imagen:hover {
-        transform: scale(1.2); /* Aumento de la imagen al pasar el ratón */
+        transform: scale(1.2); 
     }
 
 .text-container {
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Borde simple y sutil */
+    border: 1px solid rgba(0, 0, 0, 0.1); 
     position: relative;
-    padding-left: 10px; /* Separación interna de 5px */
+    padding-left: 10px; 
     padding-top: 10px
 }
 

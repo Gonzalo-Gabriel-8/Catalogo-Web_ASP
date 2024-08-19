@@ -4,6 +4,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Configuration;
+using System.Configuration;
+
 
 namespace Acceso_Datos
 {
@@ -20,7 +23,8 @@ namespace Acceso_Datos
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=DESKTOP-A95RF6B; database=CATALOGO_WEB_DB; integrated security=true");
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["cadenaConexion"].ConnectionString;
+            conexion = new SqlConnection(cadenaConexion);
             comando = new SqlCommand();
         }
 

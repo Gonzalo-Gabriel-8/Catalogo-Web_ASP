@@ -8,7 +8,7 @@
 
 .form-container {
     width: 100%;
-    max-width: 600px; /* Ancho máximo del formulario */
+    max-width: 600px; 
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;

@@ -14,10 +14,26 @@ namespace Catalogo_Web.Vistas
         {
             if (Seguridad.sessionActiva(Session["usuario"]))
             {
-                lblError.Text = Session["usuario"].ToString();
+                if (!Seguridad.IsAdmin(Session["usuario"]))
+                {
+                    lblError.Text = Session["error"].ToString();
+                    boton.Visible = false;
+                }
+                else
+                {
+                    lblError.Text = Session["usuario"].ToString();
+                    boton.Visible = false;
+                }
+
+            }
+            if (Page is Detalle)
+            {
+                lblError.Text = Session["error"].ToString();
+                boton.Visible = true;
             }
             else
                 lblError.Text = Session["error"].ToString();
+
         }
     }
 }

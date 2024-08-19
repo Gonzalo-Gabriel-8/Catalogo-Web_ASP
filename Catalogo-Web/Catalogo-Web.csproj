@@ -87,11 +87,12 @@
     <Content Include="Imagenes\heart-3510.png" />
     <Content Include="Imagenes\pngwing.com.png" />
     <Content Include="Script\Modal.js" />
-    <Content Include="Script\Modo-Oscuro.js" />
+    <Content Include="script_db\CatalogoDB.sql" />
     <Content Include="Styles\Default.css" />
     <Content Include="Styles\Detalle.css" />
     <Content Include="Styles\Favoritos.css" />
     <Content Include="Styles\Master-Page.css" />
+    <Content Include="tirar.aspx" />
     <Content Include="Vistas\Registro.aspx" />
     <Content Include="Styles\Formularios.css" />
     <Content Include="User Control\Gestiones-Productos\Gestion-Categoria.ascx" />
@@ -120,6 +121,13 @@
       <DependentUpon>Master-Gonza.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tirar.aspx.cs">
+      <DependentUpon>tirar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tirar.aspx.designer.cs">
+      <DependentUpon>tirar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

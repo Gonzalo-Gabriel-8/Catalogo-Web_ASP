@@ -13,7 +13,7 @@
                     </h3>                    
                 </div>
                 <div class="mb-3">
-                    <a href="../Vistas/Registro.aspx" class="btn btn-outline-primary">Registrarse!</a>
+                    <a href="../Vistas/Registro.aspx" id="boton" runat="server" class="btn btn-outline-primary">Registrarse!</a>
                 </div>
             </div>
         </div>

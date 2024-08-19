@@ -16,7 +16,7 @@ namespace Catalogo_Web.User_Control
         {
             if (!Seguridad.IsAdmin(Session["usuario"]))
             {
-                Session.Add("error", "Se requiere permisos de admin para acceder a esta pantalla");
+                Session.Add("error", "Se requiere permisos de Admin para ingresar aca");
                 Response.Redirect("../Vistas/Error.aspx", false);
             }
             CategoriaNegocio negocio = new CategoriaNegocio();
